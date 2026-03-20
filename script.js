@@ -37,6 +37,8 @@ function daysDifference(startDate, endDate) {
 }
 
 let inDateManuallyChanged = false;
+let isDragging = false;
+let dragMarker = null;
 
 // Update timeline visuals
 function updateTimeline() {
@@ -71,11 +73,81 @@ function updateTimeline() {
   const markerEnd = document.getElementById('markerEnd');
   const timelineRange = document.getElementById('timelineRange');
 
-  markerStart.style.left = `${startPercent}%`;
-  markerEnd.style.left = `${endPercent}%`;
+  if (!isDragging) {
+    markerStart.style.left = `${startPercent}%`;
+    markerEnd.style.left = `${endPercent}%`;
+  }
 
   timelineRange.style.left = `${startPercent}%`;
   timelineRange.style.width = `${endPercent - startPercent}%`;
+}
+
+// Convert marker position to date
+function percentToDate(percent) {
+  const today = new Date();
+  const maxDays = 60;
+  const dayOffset = Math.round(((percent - 10) / 80) * maxDays);
+  const d = new Date(today);
+  d.setDate(d.getDate() + dayOffset);
+  return d.toISOString().split('T')[0];
+}
+
+// Drag functionality
+function initDragging() {
+  const markerStart = document.getElementById('markerStart');
+  const markerEnd = document.getElementById('markerEnd');
+  const timelineVisual = document.querySelector('.timeline-visual');
+
+  function startDrag(marker, e) {
+    isDragging = true;
+    dragMarker = marker;
+    marker.classList.add('dragging');
+    e.preventDefault();
+  }
+
+  function onDrag(e) {
+    if (!isDragging || !dragMarker) return;
+
+    const rect = timelineVisual.getBoundingClientRect();
+    const x = (e.type.includes('touch') ? e.touches[0].clientX : e.clientX) - rect.left;
+    const percent = Math.min(90, Math.max(10, (x / rect.width) * 100));
+
+    dragMarker.style.left = `${percent}%`;
+
+    // Update date input based on position
+    const newDate = percentToDate(percent);
+    if (dragMarker === markerStart) {
+      document.getElementById('outDate').value = newDate;
+      if (!inDateManuallyChanged) {
+        document.getElementById('inDate').value = defaultInFromOut(newDate);
+      }
+    } else {
+      document.getElementById('inDate').value = newDate;
+      inDateManuallyChanged = true;
+    }
+
+    updateTimeline();
+  }
+
+  function endDrag() {
+    if (isDragging && dragMarker) {
+      dragMarker.classList.remove('dragging');
+      isDragging = false;
+      dragMarker = null;
+    }
+  }
+
+  // Mouse events
+  markerStart.addEventListener('mousedown', (e) => startDrag(markerStart, e));
+  markerEnd.addEventListener('mousedown', (e) => startDrag(markerEnd, e));
+  document.addEventListener('mousemove', onDrag);
+  document.addEventListener('mouseup', endDrag);
+
+  // Touch events
+  markerStart.addEventListener('touchstart', (e) => startDrag(markerStart, e));
+  markerEnd.addEventListener('touchstart', (e) => startDrag(markerEnd, e));
+  document.addEventListener('touchmove', onDrag);
+  document.addEventListener('touchend', endDrag);
 }
 
 // Initialize on page load
@@ -105,6 +177,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initial timeline render
   updateTimeline();
+
+  // Initialize dragging
+  initDragging();
 
   // Resolve airport from URL
   const urlParams = new URLSearchParams(window.location.search);

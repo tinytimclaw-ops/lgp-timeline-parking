@@ -208,8 +208,15 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   transition: left 0.3s ease;
-  cursor: pointer;
+  cursor: grab;
   user-select: none;
+  z-index: 10;
+}
+
+.timeline-marker.dragging {
+  transition: none;
+  cursor: grabbing;
+  z-index: 20;
 }
 
 .timeline-marker-start {
@@ -236,6 +243,12 @@ body {
 .timeline-marker:hover .marker-handle {
   transform: scale(1.1);
   box-shadow: 0 6px 20px rgba(199,76,40,0.5);
+}
+
+.timeline-marker.dragging .marker-handle {
+  transform: scale(1.2);
+  box-shadow: 0 8px 24px rgba(199,76,40,0.6);
+  cursor: grabbing;
 }
 
 .marker-label {
