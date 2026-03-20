@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Airport Parking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <h1 class="brand-name">
+          <svg class="product-icon product-icon--lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" aria-hidden="true">
+            <path d="m11.5 84.3c-0.9 0-1.7-0.6-1.9-1.5l-9.1-36c-0.1-0.6 0-1.2 0.4-1.7 0.4-0.5 1-0.8 1.6-0.8h9.5c0.6 0 1.1 0.3 1.5 0.7l25.4 29.4c0.7 0.8 0.6 2.1-0.2 2.8-0.8 0.7-2.1 0.6-2.8-0.2l-24.8-28.7h-6l8.4 33.5c0.3 1.1-0.4 2.2-1.5 2.4-0.2 0-0.3 0.1-0.5 0.1z"></path><path d="m51.8 98.7c-3 0-5.5-2.5-5.5-5.5v-2.6c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5v2.6c0 3-2.5 5.5-5.5 5.5zm0-9.7c-0.8 0-1.5 0.7-1.5 1.5v2.6c0 0.8 0.7 1.5 1.5 1.5 0.8 0 1.5-0.7 1.5-1.5v-2.6c0-0.8-0.7-1.5-1.5-1.5z"></path><path d="m37.3 98.7c-3 0-5.5-2.5-5.5-5.5v-2.6c0-3 2.5-5.5 5.5-5.5 3 0 5.5 2.5 5.5 5.5v2.6c0 3-2.5 5.5-5.5 5.5zm0-9.7c-0.8 0-1.5 0.7-1.5 1.5v2.6c0 0.8 0.7 1.5 1.5 1.5 0.8 0 1.5-0.7 1.5-1.5v-2.6c0-0.8-0.7-1.5-1.5-1.5z"></path><path d="m58.1 110.9c-40 0-53.8-12-54.4-12.5-0.4-0.4-0.7-0.9-0.7-1.5v-10c0-0.6 0.2-1.1 0.7-1.5 0.6-0.5 14.4-12.5 54.4-12.5 1.1 0 2 0.9 2 2s-0.9 2-2 2c-33.7 0-47.9 8.7-51 11v8.1c3.1 2.2 17.5 11 51 11 1.1 0 2 0.9 2 2s-0.9 2-2 2z"></path><path d="m64.3 59c-3.7 0-7.3-1.5-9.9-4.1l-15.4-15.4c-2.6-2.6-4.1-6.1-4.1-9.9s1.5-7.3 4.1-9.9l15.4-15.4c2.6-2.6 6.2-4.1 9.9-4.1 3.7 0 7.3 1.5 9.9 4.1l15.4 15.4c2.6 2.6 4.1 6.1 4.1 9.9s-1.5 7.3-4.1 9.9l-15.4 15.4c-2.6 2.6-6.1 4.1-9.9 4.1zm0-54.7c-2.7 0-5.2 1-7.1 2.9l-15.4 15.4c-1.9 1.9-2.9 4.4-2.9 7.1s1 5.2 2.9 7.1l15.4 15.4c3.9 3.9 10.2 3.9 14.1 0l15.4-15.4c1.9-1.9 2.9-4.4 2.9-7.1s-1-5.2-2.9-7.1l-15.4-15.4c-1.9-1.9-4.4-2.9-7.1-2.9zm8.5 49.2h0 0z"></path><path d="m58.1 44.1c-1.1 0-2-0.9-2-2v-23.8c0-1.1 0.9-2 2-2h7.7c5.2 0 9.4 4.2 9.4 9.4s-4.2 9.4-9.4 9.4h-5.7v7c0 1.1-0.9 2-2 2zm2-13h5.7c3 0 5.4-2.4 5.4-5.4s-2.4-5.4-5.4-5.4h-5.7v10.8z"></path><path d="m64.1 125.3c-1.1 0-2-0.9-2-2v-64c0-1.1 0.9-2 2-2 1.1 0 2 0.9 2 2v64c0 1.1-0.9 2-2 2z"></path><path d="m122.4 110.7h-9c-1.1 0-2-0.9-2-2s0.9-2 2-2h9c0.8 0 1.5-0.7 1.5-1.5v-5.7c0-0.4-0.2-0.8-0.5-1.1l-2.7-2.5c-0.1 0-0.2 0-0.3 0l-18.3-3.8c-1.2-0.1-2.3-0.7-3-1.7l-14-13.4c-0.1-0.1-0.2-0.3-0.3-0.4l-14.7 0c-1.1 0-2-0.9-2-2s0.9-2 2-2h14.7c1.3 0 2.5 0.6 3.2 1.7l14 13.4c0.1 0.1 0.2 0.3 0.3 0.4 0.1 0 0.2 0 0.4 0l18.3 3.8c0.9 0.1 1.7 0.4 2.4 1l2.7 2.5c1.1 1 1.7 2.5 1.7 4v5.7c0 3-2.5 5.5-5.5 5.5z"></path><path d="m103.2 121.2c-6.7 0-12.2-5.5-12.2-12.2s5.5-12.2 12.2-12.2 12.2 5.5 12.2 12.2-5.5 12.2-12.2 12.2zm0-20.4c-4.5 0-8.2 3.7-8.2 8.2s3.7 8.2 8.2 8.2c4.5 0 8.2-3.7 8.2-8.2s-3.7-8.2-8.2-8.2z"></path><path d="m93.1 111.3h-23c-1.1 0-2-0.9-2-2s0.9-2 2-2h23c1.1 0 2 0.9 2 2s-0.9 2-2 2z"></path><path d="m125.1 126.3h-121c-1.1 0-2-0.9-2-2s0.9-2 2-2h121c1.1 0 2 0.9 2 2s-0.9 2-2 2z"></path><path d="m102.1 92.2h-17c-1.1 0-2-0.9-2-2s0.9-2 2-2h17c1.1 0 2 0.9 2 2s-0.9 2-2 2z"></path></svg>
+          <span id="pageTitle">Airport Parking</span>
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img class="banner-img" src="assets/banner.jpg" alt="">
+    <div class="banner-overlay">
+      <div class="banner-text">
+        <span class="banner-badge">Timeline Search</span>
+        <h2 class="banner-headline" id="bannerHeadline">Slide through your parking journey</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <div class="intro-text">
+        <h3>Plan your parking on our interactive timeline</h3>
+        <p>Drag the sliders to set your drop-off and pick-up dates</p>
+      </div>
+
+      <!-- Timeline Form -->
+      <form id="searchForm" class="timeline-form">
+
+        <!-- Airport Selection -->
+        <div class="airport-select-wrapper">
+          <label for="airport" class="timeline-label">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" stroke="#c74c28" stroke-width="2"/>
+              <circle cx="12" cy="10" r="3" stroke="#c74c28" stroke-width="2"/>
+            </svg>
+            Select Airport
+          </label>
+          <select id="airport" class="timeline-select" required>
+            <option value="">Choose your airport...</option>
+            <option value="LHR">Heathrow</option>
+            <option value="LGW" selected>Gatwick</option>
+            <option value="MAN">Manchester</option>
+            <option value="STN">Stansted</option>
+            <option value="LTN">Luton</option>
+            <option value="BHX">Birmingham</option>
+            <option value="EDI">Edinburgh</option>
+            <option value="BRS">Bristol</option>
+            <option value="NCL">Newcastle</option>
+            <option value="LBA">Leeds Bradford</option>
+            <option value="EMA">East Midlands</option>
+            <option value="LPL">Liverpool</option>
+            <option value="GLA">Glasgow</option>
+            <option value="EXT">Exeter</option>
+            <option value="LCY">London City</option>
+          </select>
+        </div>
+
+        <!-- Visual Timeline -->
+        <div class="timeline-visual">
+          <div class="timeline-track"></div>
+
+          <!-- Drop-off Marker -->
+          <div class="timeline-marker timeline-marker-start" id="markerStart">
+            <div class="marker-handle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="marker-label">
+              <strong>Drop-off</strong>
+              <span id="startDateDisplay">Tomorrow</span>
+              <span id="startTimeDisplay">06:00</span>
+            </div>
+          </div>
+
+          <!-- Pick-up Marker -->
+          <div class="timeline-marker timeline-marker-end" id="markerEnd">
+            <div class="marker-handle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="marker-label">
+              <strong>Pick-up</strong>
+              <span id="endDateDisplay">In 9 days</span>
+              <span id="endTimeDisplay">12:00</span>
+            </div>
+          </div>
+
+          <!-- Active Range Highlight -->
+          <div class="timeline-range" id="timelineRange"></div>
+        </div>
+
+        <!-- Date and Time Controls -->
+        <div class="timeline-controls">
+
+          <!-- Drop-off Controls -->
+          <div class="control-group">
+            <h4 class="control-title">Drop-off Details</h4>
+            <div class="control-inputs">
+              <div class="input-wrapper">
+                <label for="outDate">Date</label>
+                <input type="date" id="outDate" required>
+              </div>
+              <div class="input-wrapper">
+                <label for="outTime">Time</label>
+                <select id="outTime">
+                  <option value="00:00">00:00</option>
+                  <option value="01:00">01:00</option>
+                  <option value="02:00">02:00</option>
+                  <option value="03:00">03:00</option>
+                  <option value="04:00">04:00</option>
+                  <option value="05:00">05:00</option>
+                  <option value="06:00" selected>06:00</option>
+                  <option value="07:00">07:00</option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                  <option value="21:00">21:00</option>
+                  <option value="22:00">22:00</option>
+                  <option value="23:00">23:00</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pick-up Controls -->
+          <div class="control-group">
+            <h4 class="control-title">Pick-up Details</h4>
+            <div class="control-inputs">
+              <div class="input-wrapper">
+                <label for="inDate">Date</label>
+                <input type="date" id="inDate" required>
+              </div>
+              <div class="input-wrapper">
+                <label for="inTime">Time</label>
+                <select id="inTime">
+                  <option value="00:00">00:00</option>
+                  <option value="01:00">01:00</option>
+                  <option value="02:00">02:00</option>
+                  <option value="03:00">03:00</option>
+                  <option value="04:00">04:00</option>
+                  <option value="05:00">05:00</option>
+                  <option value="06:00">06:00</option>
+                  <option value="07:00">07:00</option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00" selected>12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                  <option value="21:00">21:00</option>
+                  <option value="22:00">22:00</option>
+                  <option value="23:00">23:00</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Duration Display -->
+        <div class="duration-display">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="#c74c28" stroke-width="2"/>
+            <path d="M12 6v6l4 2" stroke="#c74c28" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span id="durationText">Duration: 9 days</span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="timeline-submit-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="8" stroke="white" stroke-width="2"/>
+            <path d="M21 21l-4.35-4.35" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Search Parking
+        </button>
+
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Airport Parking. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

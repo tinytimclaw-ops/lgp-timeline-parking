@@ -1,0 +1,437 @@
+/* LGP Timeline Slider Style */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Ubuntu, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #484e52;
+  background: #f7fafc;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.header {
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.brand-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #484e52;
+}
+
+.product-icon {
+  width: 22px;
+  height: 22px;
+  fill: #c74c28;
+}
+
+.product-icon--lg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #1a2a3a;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,.5) 0%, rgba(0,0,0,.2) 60%, transparent 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.banner-text {
+  max-width: 450px;
+}
+
+.banner-badge {
+  display: inline-block;
+  background: #c74c28;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.banner-headline {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+
+/* Main Content */
+.main-content {
+  padding: 60px 0;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.intro-text h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #484e52;
+  margin-bottom: 8px;
+}
+
+.intro-text p {
+  font-size: 16px;
+  color: #767d7d;
+}
+
+/* Timeline Form */
+.timeline-form {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Airport Selection */
+.airport-select-wrapper {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.timeline-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #484e52;
+  margin-bottom: 12px;
+}
+
+.timeline-select {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 2px solid #dfe3e5;
+  border-radius: 6px;
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  color: #484e52;
+  background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23484e52" d="M1.41 0L6 4.58 10.59 0 12 1.42l-6 6-6-6z"/></svg>') no-repeat right 16px center;
+  background-size: 12px;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeline-select:focus {
+  outline: none;
+  border-color: #c74c28;
+  box-shadow: 0 0 0 4px rgba(199,76,40,0.1);
+}
+
+.timeline-select:hover {
+  border-color: #afafaf;
+}
+
+/* Visual Timeline */
+.timeline-visual {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 80px 60px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  min-height: 200px;
+}
+
+.timeline-track {
+  position: absolute;
+  top: 50%;
+  left: 60px;
+  right: 60px;
+  height: 8px;
+  background: linear-gradient(90deg, #f0f0f0 0%, #f0f0f0 100%);
+  border-radius: 4px;
+  transform: translateY(-50%);
+}
+
+.timeline-range {
+  position: absolute;
+  top: 50%;
+  height: 8px;
+  background: linear-gradient(90deg, #c74c28 0%, #ff8a5b 100%);
+  border-radius: 4px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(199,76,40,0.3);
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.timeline-marker-start {
+  left: 10%;
+}
+
+.timeline-marker-end {
+  left: 90%;
+}
+
+.marker-handle {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #c74c28 0%, #e05a32 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(199,76,40,0.4);
+  transition: all 0.2s;
+  border: 4px solid #fff;
+}
+
+.timeline-marker:hover .marker-handle {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(199,76,40,0.5);
+}
+
+.marker-label {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  background: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 140px;
+}
+
+.marker-label strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #c74c28;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.marker-label span {
+  display: block;
+  font-size: 14px;
+  color: #484e52;
+  line-height: 1.4;
+}
+
+/* Timeline Controls */
+.timeline-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.control-group {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.control-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #484e52;
+  margin-bottom: 16px;
+}
+
+.control-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.input-wrapper label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #767d7d;
+  margin-bottom: 6px;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  height: 46px;
+  padding: 0 12px;
+  border: 1px solid #dfe3e5;
+  border-radius: 4px;
+  font-family: Ubuntu, sans-serif;
+  font-size: 16px;
+  color: #484e52;
+  background: #f7fafc;
+  transition: all 0.2s;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  outline: none;
+  border-color: #c74c28;
+  background: #fff;
+  box-shadow: inset 0 0 0 4px rgba(199,76,40,0.1);
+}
+
+.input-wrapper select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path fill="%23484e52" d="M1.41 0L6 4.58 10.59 0 12 1.42l-6 6-6-6z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 10px;
+  padding-right: 32px;
+}
+
+/* Duration Display */
+.duration-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #c74c28;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Submit Button */
+.timeline-submit-btn {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #c74c28;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: Ubuntu, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(199,76,40,0.3);
+}
+
+.timeline-submit-btn:hover {
+  background: #9d3c1f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(199,76,40,0.4);
+}
+
+.timeline-submit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(199,76,40,0.2);
+}
+
+/* Footer */
+.footer {
+  background: #484e52;
+  color: #fff;
+  padding: 32px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #adadad;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner-headline {
+    font-size: 24px;
+  }
+
+  .timeline-visual {
+    padding: 100px 30px 60px;
+  }
+
+  .timeline-track {
+    left: 30px;
+    right: 30px;
+  }
+
+  .marker-label {
+    top: -70px;
+    font-size: 12px;
+    min-width: 120px;
+    padding: 8px 12px;
+  }
+
+  .marker-label span {
+    font-size: 12px;
+  }
+
+  .marker-handle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .timeline-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .control-inputs {
+    grid-template-columns: 1fr;
+  }
+}
